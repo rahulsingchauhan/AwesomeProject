@@ -1,28 +1,20 @@
-// App.jsx
-
 import React from 'react';
-import { View, Text, StyleSheet, StatusBar, Image } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import Login from './src/screens/Login';
 
-export default function App() {
+const App = () => {
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#6200ee" />
-      <Text style={styles.text}>Hello, React Native!</Text>
-      
+      <Login />
     </View>
   );
-}
+};
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 4,
-    backgroundColor: '#6200ee',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    color: '#ffffff',
-    fontSize: 24,
-    fontWeight: 'bold',
+    flex: 1,
+    backgroundColor: '#fff',
   },
 });
