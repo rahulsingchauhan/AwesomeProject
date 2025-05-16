@@ -9,13 +9,18 @@ import AdvancedSpacingExample from './src/screens/AdvancedSpacingExample';
 import PositioningExample from './src/screens/PositioningExample';
 import ScrollableListExample from './src/screens/ScrollableListExample';
 import TouchablesExample from './src/screens/TouchablesExample';
+import Success from './src/screens/Success';
+import Profile from './src/screens/Profile';
 
 const App = () => {
   return (
     <View style={styles.container}>
       {/* <Login /> */}
       {/* <Welcome/> */}
-      <Details/>
+      {/* <Details/> */}
+      {/* <Success/> */}
+      <Profile/>
+
       {/* <FlexboxLayoutExample/> */}
       {/* <FlexPropertiesExample/> */}
       {/* <AdvancedSpacingExample/> */}

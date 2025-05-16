@@ -7,13 +7,21 @@ const Details = () => {
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity style={styles.iconWrapper}>
-         <Image
-  source={require('../assets/images/image9.png')}
+          <Image
+            source={require('../assets/images/image9.png')}
             style={styles.leftBackButton}
           />
         </TouchableOpacity>
-        <Text style={styles.center}>Details</Text>
+        <Text style={styles.center}>Profile</Text>
         <View style={{ width: 32 }} />
+      </View>
+
+      {/* User Image in Circle */}
+      <View style={styles.userImageWrapper}>
+        <Image
+          source={require('../assets/images/done.png')}
+          style={styles.userImage}
+        />
       </View>
 
       {/* Form Section */}
@@ -22,7 +30,7 @@ const Details = () => {
           <View style={styles.form}>
             <TextInput
               style={styles.input}
-              placeholder="Enter object name"
+              placeholder="Name"
               placeholderTextColor="#888"
             />
 
@@ -30,37 +38,23 @@ const Details = () => {
 
             <TextInput
               style={styles.input}
-              placeholder="Enter type"
+              placeholder="Email"
               placeholderTextColor="#888"
             />
 
             <View style={styles.spacer} />
 
             <TextInput
-              style={[styles.input, styles.textarea]}
-              placeholder="Enter description"
+              style={styles.input}
+              placeholder="Mobile No."
               placeholderTextColor="#888"
-              multiline={true}
-              numberOfLines={4}
             />
-          </View>
-
-          {/* Photo Section */}
-          <View style={styles.photoSection}>
-            <Text style={styles.label}>Photos</Text>
-            <View style={styles.photoGrid}>
-              {[...Array(10)].map((_, index) => (
-                <TouchableOpacity key={index} style={styles.photoBox}>
-                  <Text style={styles.plusIcon}>＋</Text>
-                </TouchableOpacity>
-              ))}
-            </View>
           </View>
         </View>
 
         {/* Submit Button */}
         <TouchableOpacity style={styles.submitButton}>
-          <Text style={styles.submitButtonText}>Submit</Text>
+          <Text style={styles.submitButtonText}>Update</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -97,6 +91,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     flex: 1,
   },
+  userImageWrapper: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  userImage: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+    borderWidth: 2,
+    borderColor: '#ccc',
+    resizeMode: 'cover',
+  },
   formContainer: {
     flex: 1,
     justifyContent: 'space-between',
@@ -109,7 +116,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   spacer: {
-    height: 15, // spacing between inputs
+    height: 20,
   },
   input: {
     borderWidth: 1,
@@ -119,41 +126,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     backgroundColor: '#f9f9f9',
     color: 'black',
-  },
-  textarea: {
-    height: 120,
-    textAlignVertical: 'top',
-  },
-  label: {
-    fontSize: 16,
-    fontWeight: '600',
-    marginBottom: 20,
-    marginTop: 8,
-  },
-  photoSection: {
-    marginTop: 6,
-  },
-  photoGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'flex-start',
-  },
-  photoBox: {
-    width: 50,
-    height: 50,
-    borderWidth: 1,
-    borderColor: '#bbb',
-    borderStyle: 'dotted',
-    borderRadius: 8,
-    marginBottom: 8,
-    marginRight: 14,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fdfdfd',
-  },
-  plusIcon: {
-    fontSize: 24,
-    color: '#999',
   },
   submitButton: {
     backgroundColor: '#535c74',
