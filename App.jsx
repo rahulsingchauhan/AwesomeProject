@@ -11,6 +11,8 @@ import ScrollableListExample from './src/screens/ScrollableListExample';
 import TouchablesExample from './src/screens/TouchablesExample';
 import Success from './src/screens/Success';
 import Profile from './src/screens/Profile';
+import FlatListExample from './src/screens/FlatListExample';
+import SmallFoodCards from './src/screens/SmallFoodCards';
 
 const App = () => {
   return (
@@ -19,7 +21,7 @@ const App = () => {
       {/* <Welcome/> */}
       {/* <Details/> */}
       {/* <Success/> */}
-      <Profile/>
+      {/* <Profile/> */}
 
       {/* <FlexboxLayoutExample/> */}
       {/* <FlexPropertiesExample/> */}
@@ -27,6 +29,8 @@ const App = () => {
       {/* <PositioningExample/> */}
       {/* <ScrollableListExample/> */}
       {/* <TouchablesExample/> */}
+      <SmallFoodCards/>
+      {/* <FlatListExample/> */}
 
     </View>
   );
