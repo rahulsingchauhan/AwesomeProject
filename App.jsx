@@ -16,6 +16,7 @@ import SmallFoodCards from './src/screens/SmallFoodCards';
 import TextInputExample from './src/screens/TextInputExample';
 import ModalExample from './src/screens/ModalExample';
 import ImageExample from './src/screens/ImageExample';
+import ClickCounter from './src/screens/ClickCounter';
 
 const App = () => {
   return (
@@ -35,7 +36,10 @@ const App = () => {
       {/* <TouchablesExample/> */}
       {/* <TextInputExample/> */}
       {/* <ModalExample/> */}
-      <ImageExample/>
+      {/* <ImageExample/> */}
+
+      {/* Hands on */}
+      <ClickCounter/>
     </View>
   );
 };
