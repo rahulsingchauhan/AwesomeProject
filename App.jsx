@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import Login from './src/screens/Login';
 import Welcome from './src/screens/Welcome';
 import Details from './src/screens/Details';
@@ -17,10 +18,11 @@ import TextInputExample from './src/screens/TextInputExample';
 import ModalExample from './src/screens/ModalExample';
 import ImageExample from './src/screens/ImageExample';
 import ClickCounter from './src/screens/ClickCounter';
+import StackNavigator from './Ecommerce/StackNavigator';
 
 const App = () => {
   return (
-    <View style={styles.container}>
+  <NavigationContainer>
       {/* <Login /> */}
       {/* <Welcome/> */}
       {/* <Details/> */}
@@ -39,8 +41,11 @@ const App = () => {
       {/* <ImageExample/> */}
 
       {/* Hands on */}
-      <ClickCounter/>
-    </View>
+      {/* <ClickCounter/> */}
+
+
+        <StackNavigator />
+   </NavigationContainer>
   );
 };
 

@@ -1,39 +1,70 @@
-import React from 'react';
-import { ScrollView, View, Text, StyleSheet } from 'react-native';
-const colors = ['red', 'green', 'blue', 'orange', 'purple', 'teal', 'pink', 'black', 'yellow'];
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 const ClickCounter = () => {
+  const [count, setCount] = useState(0);
+
+  const increment = () => setCount(count + 1);
+  const decrement = () => {
+    if (count > 0) setCount(count - 1);
+  };
+  const reset = () => setCount(0);
+
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      {colors.map((color, index) => (
-        <View key={index} style={[styles.box, { backgroundColor: color }]}>
-          <Text style={styles.text}>{color.toUpperCase()}</Text>
-        </View>
-      ))}
-    </ScrollView>
+    <View style={styles.container}>
+      <Text style={styles.countText}>Count: {count}</Text>
+
+      <View style={styles.buttonRow}>
+        <TouchableOpacity style={styles.button} onPress={decrement}>
+          <Text style={styles.buttonText}>-</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} onPress={increment}>
+          <Text style={styles.buttonText}>+</Text>
+        </TouchableOpacity>
+      </View>
+
+      <TouchableOpacity style={styles.resetButton} onPress={reset}>
+        <Text style={styles.buttonText}>Reset</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
-
 
 export default ClickCounter;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 16,
     alignItems: 'center',
-  },
-  box: {
-    width: '90%',
-    height: 100,
-    marginBottom: 15,
-    borderRadius: 10,
     justifyContent: 'center',
-    alignItems: 'center',
-    elevation: 3,
+    flex: 1,
+    backgroundColor: '#f0f0f0',
   },
-  text: {
+  countText: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    marginBottom: 30,
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    marginBottom: 20,
+  },
+  button: {
+    backgroundColor: '#3498db',
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+    marginHorizontal: 10,
+  },
+  resetButton: {
+    backgroundColor: '#e74c3c',
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+  },
+  buttonText: {
     color: '#fff',
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
   },
 });
